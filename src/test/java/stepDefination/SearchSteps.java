@@ -49,6 +49,7 @@ public class SearchSteps extends TestBase {
 		List<WebElement> header = driver.findElements(By.tagName("h2"));
 		int size = header.size();
 		System.out.println(size);
+		Assert.assertEquals(7, size);
 
 	}
 
