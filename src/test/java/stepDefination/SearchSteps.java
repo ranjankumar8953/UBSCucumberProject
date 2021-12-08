@@ -36,10 +36,11 @@ public class SearchSteps extends TestBase {
 	public void i_can_get_seven_chapter_on_cucumber_hooks_page() throws InterruptedException {
 		List<WebElement> cucumberLink = driver.findElements(By.tagName("a"));
 		Iterator<WebElement> itr = cucumberLink.iterator();
+		WebElement cucumberText;
 		while (itr.hasNext()) {
-			String cucumberText = itr.next().getText();
-			if (cucumberText.equalsIgnoreCase("Cucumber Hooks")) {
-				itr.next().click();
+			cucumberText = itr.next();
+			if (cucumberText.getText().equalsIgnoreCase("Cucumber Hooks")) {
+				cucumberText.click();
 				break;
 			}
 		}
